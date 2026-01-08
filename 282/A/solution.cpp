@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int n;
+  cin >> n;
+  int x = 0;
+  while (n--) {
+    string v;
+    cin >> v;
+
+    if (v == "++X" or v == "X++") {
+      x++;
+    } else if (v == "--X" or v == "X--") {
+      x--;
+    }
+  }
+
+  cout << x << "\n";
+}
