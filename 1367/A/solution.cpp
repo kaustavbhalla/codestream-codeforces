@@ -2,18 +2,21 @@
 using namespace std;
 
 int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(NULL);
   int t;
   cin >> t;
 
   while (t--) {
     string s;
-    cin >> b;
+    cin >> s;
 
-    if (s.size() == 2) {
-      cout << s;
+    char a = s[0];
+    string result{a};
+    for (int i = 1; i < s.size(); i += 2) {
+      result += s[i];
     }
 
-    for (int i = 0; i < s.size(); i++) {
-    }
+    cout << result << "\n";
   }
 }
