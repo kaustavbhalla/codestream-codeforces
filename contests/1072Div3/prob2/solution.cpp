@@ -9,49 +9,20 @@ int main() {
   cin >> t;
 
   while (t--) {
-    int s, k, m;
+    long long s, k, m;
     cin >> s >> k >> m;
 
-    if (s == k) {
-      if (k == m) {
-        cout << s << "\n";
-      }
+    long long flips = m / k;
+    long long time = m % k;
 
-      if (k > m) {
-        cout << k - m << "\n";
-      }
+    long long ans;
 
-      if (m > k) {
-        int i = 1;
-        while ((k * i) < m) {
-          i++;
-        }
-        cout << (k * i) - m << "\n";
-      }
-    } else if (s < k) {
-      if (k == m) {
-        cout << s << "\n";
-      }
-
-      if (k < m) {
-        cout << k - (m - k) << "\n";
-      }
-
-      if (k > m) {
-        cout << 0 << "\n";
-      }
-    } else if (s > k) {
-      if (k == m) {
-        cout << m << "\n";
-      }
-
-      if (k < m) {
-        cout << ((2 * k) - m) << "\n";
-      }
-
-      if (k > m) {
-        cout << s - m << "\n";
-      }
+    if (flips % 2 == 0) {
+      ans = max(0LL, s - time);
+    } else {
+      ans = max(0LL, min(s, k) - time);
     }
+
+    cout << ans << "\n";
   }
 }

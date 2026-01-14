@@ -15,28 +15,18 @@ int main() {
     string s;
     cin >> s;
 
-    char *ptr1 = &(s[n - 1]);
-    char *ptr2 = &(s[0]);
+    int frontIndex = 0;
+    int backIndex = n - 1;
 
-    if (*ptr1 == *ptr2) {
-      cout << s.size() << "\n";
+    while ((frontIndex < backIndex) && (s[frontIndex] != s[backIndex])) {
+      frontIndex++;
+      backIndex--;
     }
 
-    while (*ptr1 != *ptr2) {
-      ptr1--;
-      ptr2++;
-    }
+    int ans = backIndex - frontIndex + 1;
+    if (ans < 0)
+      ans = 0;
 
-    if (ptr1 == ptr2) {
-      cout << 0 << "\n";
-    }
-
-    int count = 0;
-
-    for (char *i = ptr1; i != ptr2; i++) {
-      count++;
-    }
-
-    cout << count << "\n";
+    cout << ans << "\n";
   }
 }
