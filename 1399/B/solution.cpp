@@ -2,11 +2,16 @@
 using namespace std;
 
 void solve() {
-  int Ro, X, D, n;
-  cin >> Ro >> X >> D >> n;
+  int n;
+  cin >> n;
+  vector<pair<int, int>> a(n);
+  for (int i = 0; i < n; i++) {
+    cin >> a[i].first;
+  }
 
-  string s;
-  cin >> s;
+  for (int i = 0; i < n; i++) {
+    cin >> a[i].second;
+  }
 }
 
 int main() {

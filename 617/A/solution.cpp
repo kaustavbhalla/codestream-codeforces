@@ -2,20 +2,15 @@
 using namespace std;
 
 void solve() {
-  int Ro, X, D, n;
-  cin >> Ro >> X >> D >> n;
+  int x;
+  cin >> x;
 
-  string s;
-  cin >> s;
+  cout << (x + 4) / 5 << "\n";
 }
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(NULL);
 
-  int t;
-  cin >> t;
-  while (t--) {
-    solve();
-  }
+  solve();
 }
