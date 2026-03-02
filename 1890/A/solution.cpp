@@ -6,14 +6,26 @@ void solve() {
   cin >> n;
 
   vector<int> a(n);
+  set<int> s;
 
   for (int i = 0; i < n; i++) {
     cin >> a[i];
+    s.insert(a[i]);
   }
 
-  if (n == 2) {
+  if (s.size() == 1) {
     cout << "YES" << "\n";
+  } else if (s.size() != 2) {
+    cout << "NO" << "\n";
   } else {
+    int firstUniVal = *s.begin();
+    int c1 = count(a.begin(), a.end(), firstUniVal);
+
+    if (c1 == n / 2 || c1 == (n + 1) / 2) {
+      cout << "YES" << "\n";
+    } else {
+      cout << "NO" << "\n";
+    }
   }
 }
 
