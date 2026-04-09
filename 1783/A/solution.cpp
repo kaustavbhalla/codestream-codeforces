@@ -11,20 +11,18 @@ void solve() {
     cin >> a[i];
   }
 
-  vector<int> retArr;
-  if (n <= 2) {
-    cout << "NO";
-    return;
+  if (a[0] == a[n - 1]) {
+    cout << "NO\n";
   } else {
-    for (int i = 2; i < n; i++) {
-      int sumi = 0;
-      for (int j = 0; j < i; j++) {
-        sumi += a[j];
-      }
-      if (sumi == a[i]) {
-        swap(a[i - 1], a[i]);
-      }
+
+    cout << "YES\n";
+    cout << a[n - 1] << " ";
+
+    for (int i = 0; i < n - 1; i++) {
+      cout << a[i] << " ";
     }
+
+    cout << "\n";
   }
 }
 
