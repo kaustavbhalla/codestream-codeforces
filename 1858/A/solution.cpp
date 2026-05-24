@@ -5,10 +5,30 @@ void solve() {
   int a, b, c;
   cin >> a >> b >> c;
 
-  if ((a + b + c) % 2 == 0) {
-    cout << "Second\n";
-  } else {
-    cout << "First\n";
+  if (c % 2 != 0) {
+    if (a == b) {
+      cout << "First" << "\n";
+    }
+
+    if (b > a) {
+      cout << "Second" << "\n";
+    }
+
+    if (a > b) {
+      cout << "First" << "\n";
+    }
+  } else if (c % 2 == 0) {
+    if (a == b) {
+      cout << "Second" << "\n";
+    }
+
+    if (b > a) {
+      cout << "Second\n";
+    }
+
+    if (a > b) {
+      cout << "First\n";
+    }
   }
 }
 
